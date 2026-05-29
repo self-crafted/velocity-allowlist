@@ -20,7 +20,7 @@ dependencies {
 
 tasks {
     blossom {
-        val plugin = "src/main/java/com/github/selfcrafted/velocity/whitelist/VelocityWhitelist.java"
+        val plugin = "src/main/java/com/github/selfcrafted/velocity/allowlist/VelocityAllowlist.java"
 
         replaceToken("&&name", project.name, plugin)
         replaceToken("&&version", version, plugin)

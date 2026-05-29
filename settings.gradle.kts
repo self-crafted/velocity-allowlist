@@ -8,4 +8,4 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = "velocity-whitelist"
+rootProject.name = "velocity-allowlist"

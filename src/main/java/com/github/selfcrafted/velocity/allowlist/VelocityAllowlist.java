@@ -1,4 +1,4 @@
-package com.github.selfcrafted.velocity.whitelist;
+package com.github.selfcrafted.velocity.allowlist;
 
 import com.google.inject.Inject;
 import com.velocitypowered.api.event.ResultedEvent;
@@ -17,14 +17,14 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-@Plugin(id = "selfcrafted-velocity-whitelist", name = "&&name", version = "&&version",
-        url = "https://github.com/self-crafted/velocity-whitelist",
-        description = "Dead simple player whitelist for Velocity proxy",
+@Plugin(id = "selfcrafted-velocity-allowlist", name = "&&name", version = "&&version",
+        url = "https://github.com/self-crafted/velocity-allowlist",
+        description = "Dead simple player allowlist for Velocity proxy",
         authors = {"offby0point5"})
-public class VelocityWhitelist {
-    private static final File WHITELIST_FILE = new File("whitelist.txt");
+public class VelocityAllowlist {
+    private static final File ALLOWLIST_FILE = new File("allowlist.txt");
 
-    private static Set<UUID> WHITELIST = Set.of();
+    private static Set<UUID> ALLOWLIST = Set.of();
     private static final ResultedEvent.ComponentResult ALLOWED = ResultedEvent.ComponentResult.allowed();
     private static final ResultedEvent.ComponentResult DENIED = ResultedEvent.ComponentResult.denied(
             Component.text("You're not invited to the party...", NamedTextColor.RED));
@@ -36,18 +36,18 @@ public class VelocityWhitelist {
 
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {
-        server.getScheduler().buildTask(this, this::reloadWhitelist).repeat(Duration.ofSeconds(10)).schedule();
+        server.getScheduler().buildTask(this, this::reloadAllowlist).repeat(Duration.ofSeconds(10)).schedule();
     }
 
     @Subscribe
     public void onPlayerJoin(LoginEvent event) {
-        if (WHITELIST.contains(event.getPlayer().getUniqueId())) event.setResult(ALLOWED);
+        if (ALLOWLIST.contains(event.getPlayer().getUniqueId())) event.setResult(ALLOWED);
         else event.setResult(DENIED);
     }
 
-    private void reloadWhitelist() {
+    private void reloadAllowlist() {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(WHITELIST_FILE));
+            BufferedReader reader = new BufferedReader(new FileReader(ALLOWLIST_FILE));
             Set<UUID> uuidSet = new HashSet<>();
             String uuidLine;
             while ((uuidLine = reader.readLine()) != null) {
@@ -58,13 +58,13 @@ public class VelocityWhitelist {
                     logger.warn("Line is not a valid UUID: \"" + uuidLine + "\"\nComment lines start with a '#'.");
                 }
             }
-            WHITELIST = Set.copyOf(uuidSet);
+            ALLOWLIST = Set.copyOf(uuidSet);
         } catch (FileNotFoundException e) {
             try {
-                if (WHITELIST_FILE.createNewFile())
-                    logger.info("Created whitelist file");
+                if (ALLOWLIST_FILE.createNewFile())
+                    logger.info("Created allowlist file");
             } catch (IOException e2) {
-                logger.warn("Couldn't create whitelist file", e2);
+                logger.warn("Couldn't create allowlist file", e2);
             }
         } catch (IOException e) {
             e.printStackTrace();
