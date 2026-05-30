@@ -12,6 +12,8 @@ Dead simple player allowlist for Minecraft Velocity proxy.
 velocity-allowlist adds no commands to interface with it.
 All attempts on joining the proxy are blocked, unless the players UUID is in a text file named `allowlist.txt`.
 
+![Image of rejected connection](blocked.png)
+
 ## Table of Contents
 
 - [Install](#install)
