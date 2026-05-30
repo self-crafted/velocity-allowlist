@@ -18,11 +18,13 @@ dependencies {
     annotationProcessor(libs.velocity.api)
 }
 
-tasks {
-    blossom {
-        val plugin = "src/main/java/com/github/selfcrafted/velocity/allowlist/VelocityAllowlist.java"
-
-        replaceToken("&&name", project.name, plugin)
-        replaceToken("&&version", version, plugin)
+sourceSets {
+    main {
+        blossom {
+            javaSources {
+                property("name", project.name)
+                property("version", version.toString())
+            }
+        }
     }
 }
