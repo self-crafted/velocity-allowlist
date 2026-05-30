@@ -55,7 +55,7 @@ public class VelocityAllowlist {
                 try {
                     uuidSet.add(UUID.fromString(uuidLine.stripIndent()));
                 } catch (IllegalArgumentException e) {
-                    logger.warn("Line is not a valid UUID: \"" + uuidLine + "\"\nComment lines start with a '#'.");
+                    logger.warn("Line is not a valid UUID: \"{}\"\nComment lines start with a '#'.", uuidLine);
                 }
             }
             ALLOWLIST = Set.copyOf(uuidSet);
@@ -64,10 +64,10 @@ public class VelocityAllowlist {
                 if (ALLOWLIST_FILE.createNewFile())
                     logger.info("Created allowlist file");
             } catch (IOException e2) {
-                logger.warn("Couldn't create allowlist file", e2);
+                logger.warn("Could not create allowlist file", e2);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Could not read allowlist file", e);
         }
     }
 }
