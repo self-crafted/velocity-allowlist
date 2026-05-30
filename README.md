@@ -5,7 +5,8 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/self-crafted/velocity-allowlist?style=flat-square)](https://github.com/self-crafted/velocity-allowlist/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/self-crafted/velocity-allowlist?style=flat-square)](https://github.com/self-crafted/velocity-allowlist/network/members)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/self-crafted/velocity-allowlist?style=flat-square)](https://github.com/self-crafted/velocity-allowlist/releases/latest)
-[![GitHub all releases](https://img.shields.io/github/downloads/self-crafted/velocity-allowlist/total?style=flat-square)](https://github.com/self-crafted/velocity-allowlist/releases)
+[![GitHub all releases](https://img.shields.io/github/downloads/self-crafted/velocity-allowlist/total?style=flat-square&label=downloads%20-%20GitHub)](https://github.com/self-crafted/velocity-allowlist/releases)
+[![Modrinth Downloads](https://img.shields.io/modrinth/dt/EPawOqFJ?style=flat-square&label=downloads%20-%20Modrinth)](https://modrinth.com/plugin/velocity-allowlist/versions)
 
 Dead simple player allowlist for Minecraft Velocity proxy.
 
@@ -24,7 +25,8 @@ All attempts on joining the proxy are blocked, unless the players UUID is in a t
 - [License](#license)
 
 ## Install
-Download a release from [GitHub](https://github.com/self-crafted/velocity-allowlist/releases)
+Download a release from [GitHub](https://github.com/self-crafted/velocity-allowlist/releases),
+[Modrinth](https://modrinth.com/plugin/velocity-allowlist/versions)
 or [build the plugin from source](#build-from-source).
 
 Put the `.jar` into the `plugins/` directory of the proxy.
