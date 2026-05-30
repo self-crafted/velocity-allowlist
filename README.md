@@ -9,31 +9,25 @@
 
 Dead simple player allowlist for Minecraft Velocity proxy.
 
-velocity-allowlist is built for my private network, so it may or may not fit your needs.
-It adds no commands to interface with it. 
-All attempts on joining the proxy are blocked, unless the players UUID is in a textfile named `allowlist.txt`.
+velocity-allowlist adds no commands to interface with it.
+All attempts on joining the proxy are blocked, unless the players UUID is in a text file named `allowlist.txt`.
 
 ## Table of Contents
 
 - [Install](#install)
 - [Usage](#usage)
+- [Build from source](#build-from-source)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Install
-You could either just download a [release](https://github.com/self-crafted/velocity-allowlist/releases) or you compile the server yourself using the following commands under Linux
-```shell
-git clone https://github.com/self-crafted/velocity-allowlist.git
-cd velocity-allowlist
-./gradlew build
-```
-The server jar will be located at `build/libs/velocity-allowlist-<VERSION>.jar`.
+Download a release from [GitHub](https://github.com/self-crafted/velocity-allowlist/releases)
+or [build the plugin from source](#build-from-source).
 
-Note that for compiling you need to use a JDK 17.
+Put the `.jar` into the `plugins/` directory of the proxy.
 
 ## Usage
-To use this plugin you need to run Java 17.
 The file `allowlist.txt` is read every 10 seconds. So simply drop the UUIDs of friends and family in there.
 You can write comments starting the line with `#` or `//`.
 Player names can't be used. The plugin will accept UUIDs only.
@@ -45,11 +39,25 @@ Player names can't be used. The plugin will accept UUIDs only.
   <valid UUID>
 ```
 
+## Build from source
+
+You can compile the plugin yourself using the following commands under Linux.
+```shell
+git clone https://github.com/self-crafted/velocity-allowlist.git
+cd velocity-allowlist
+./gradlew build
+```
+The plugin jar will be located at `build/libs/velocity-allowlist-<VERSION>.jar`.
+
+Note that for compiling you should use JDK 21, the minimum version for Velocity build 600 (latest at 30th May 2026).
+
 ## Maintainers
 
 [@offby0point5](https://github.com/offby0point5)
 
 ## Contributing
+
+If you've got suggestions, feel free to open an [issue](https://github.com/self-crafted/velocity-allowlist/issues).
 
 PRs accepted.
 
