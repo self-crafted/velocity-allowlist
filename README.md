@@ -1,7 +1,7 @@
 # velocity-allowlist
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-[![GitHub](https://img.shields.io/github/license/self-crafted/velocity-allowlist?style=flat-square&color=b2204c)](https://github.com/self-crafted/velocity-allowlist/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/self-crafted/velocity-allowlist?style=flat-square&color=b2204c)](https://github.com/self-crafted/velocity-allowlist/blob/main/LICENSE)
 [![GitHub Repo stars](https://img.shields.io/github/stars/self-crafted/velocity-allowlist?style=flat-square)](https://github.com/self-crafted/velocity-allowlist/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/self-crafted/velocity-allowlist?style=flat-square)](https://github.com/self-crafted/velocity-allowlist/network/members)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/self-crafted/velocity-allowlist?style=flat-square)](https://github.com/self-crafted/velocity-allowlist/releases/latest)
