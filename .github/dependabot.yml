@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "gradle"
-    directory: "/"
+    directory: "/gradle/"
     schedule:
       interval: "daily"
     open-pull-requests-limit: 5
@@ -11,5 +11,3 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
-    # for version catalogs (libs.versions.toml)
-    versioning-strategy: "lockfile-only"
