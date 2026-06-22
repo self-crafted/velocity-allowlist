@@ -2,6 +2,8 @@ package com.github.selfcrafted.velocity.allowlist;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.slf4j.Logger;
 
 import java.io.*;
@@ -49,14 +51,18 @@ public class Settings {
     }
 
     public static class State {
-        URI source;
-        int reloadInterval;
+        private final URI source;
+        private final int reloadInterval;
+        private final Component deniedReason;
 
         public State() {
             try {
                 source = new URI("file://allowlist.txt");
-            } catch (URISyntaxException ignored) { }
+            } catch (URISyntaxException e) {
+                throw new IllegalStateException("Could not parse default value of 'source'", e);
+            }
             reloadInterval = 10;
+            deniedReason = Component.text("You're not invited to the party...", NamedTextColor.RED);
         }
 
         public URI getSource() {
@@ -65,6 +71,10 @@ public class Settings {
 
         public int getReloadInterval() {
             return reloadInterval;
+        }
+
+        public Component getDeniedReason() {
+            return deniedReason;
         }
     }
 }
