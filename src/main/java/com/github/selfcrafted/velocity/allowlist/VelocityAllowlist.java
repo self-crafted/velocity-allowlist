@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-@Plugin(id = "selfcrafted-velocity-allowlist", name = "{{ name }}", version = "{{ version }}",
+@Plugin(id = "selfcrafted-velocity-allowlist", name = Versions.NAME, version = Versions.VERSION,
         url = "https://github.com/self-crafted/velocity-allowlist",
         description = "Dead simple player allowlist for Velocity proxy",
         authors = {"offby0point5"})
